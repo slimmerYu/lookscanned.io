@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "packageManager": "pnpm@8.10.3",
   "scripts": {
-    "dev": "vite",
+    "dev": "node scripts/copy-pdfjs-assets.mjs && vite",
     "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "build-only": "vite build",
+    "preview": "node scripts/copy-pdfjs-assets.mjs && vite preview",
+    "build-only": "node scripts/copy-pdfjs-assets.mjs && vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
@@ -25,6 +25,7 @@
     "browser-fs-access": "^0.35.0",
     "filesize": "^10.1.0",
     "jspdf": "^2.5.1",
+    "jszip": "^3.10.2",
     "magica-re-export": "^1.0.9",
     "naive-ui": "^2.35.0",
     "pdf-lib": "^1.17.1",

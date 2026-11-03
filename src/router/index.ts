@@ -24,6 +24,11 @@ const router = createRouter({
       name: 'scan-magica',
       component: () => import('@/views/MagicaScanView.vue')
     },
+    {
+      path: '/scan-batch',
+      name: 'scan-batch',
+      component: () => import('@/views/BatchScanView.vue')
+    },
     // catch all redirect to /
     {
       path: '/:pathMatch(.*)*',

@@ -1,5 +1,4 @@
 import type { PDFDocumentProxy } from 'pdfjs-dist/types/src/pdf'
-import { standardFontDataFactory } from './standardFontDataFactory'
 
 export interface PDFPageInfo {
   blob: Blob
@@ -35,9 +34,11 @@ export class PDF implements PDFRenderer {
   async init() {
     const { getDocument } = await import('./getDocument')
     const url = URL.createObjectURL(this.pdf)
+    const base = import.meta.env.BASE_URL
     const pdfDocument = await getDocument({
       url: url,
-      StandardFontDataFactory: standardFontDataFactory
+      cMapUrl: `${base}cmaps/`,
+      standardFontDataUrl: `${base}standard_fonts/`
     }).promise
     this.pdfDocument = pdfDocument
   }

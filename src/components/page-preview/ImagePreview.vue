@@ -1,5 +1,5 @@
 <template>
-  <n-image :src="imageURL" v-if="imageURL" style="display: block" />
+  <n-image :src="imageURL" v-if="imageURL" class="image-box" />
   <div v-else class="image-placeholder" :style="skeletonStyle">
     <n-skeleton width="100%" height="100%" />
   </div>
@@ -29,9 +29,17 @@ const skeletonStyle = computed(() => {
 </script>
 
 <style scoped>
-.preview {
+.image-box {
+  display: block;
   width: 100%;
-  height: 100%;
+}
+
+.image-box :deep(.n-image__img),
+.image-box :deep(img) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .image-placeholder {

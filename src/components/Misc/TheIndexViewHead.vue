@@ -10,6 +10,7 @@
     </n-p>
 
     <NavigateToScan />
+    <NavigateToBatchScan />
 
     <n-grid :x-gap="20" :y-gap="0" :cols="2">
       <n-grid-item>
@@ -25,6 +26,7 @@
 <script setup lang="ts">
 import { NH1, NP, NSpace, NGrid, NGridItem } from 'naive-ui'
 import NavigateToScan from '@/components/buttons/NavigateToScan.vue'
+import NavigateToBatchScan from '@/components/buttons/NavigateToBatchScan.vue'
 import NavigateToGitHub from '@/components/buttons/NavigateToGitHub.vue'
 import NavigateToInBrowserApp from '@/components/buttons/NavigateToInBrowserApp.vue'
 
